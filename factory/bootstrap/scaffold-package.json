@@ -1,0 +1,54 @@
+{
+  "schema_version": "2026-06-17",
+  "project": "Phoenix Epoxy Pros",
+  "status": "ready_for_auto_builder_ingestion_with_twilio_sms",
+  "full_scaffold_package": {
+    "title": "xtreme-epoxy-phoenix-production-ready-scaffold-twilio-v3.zip",
+    "drive_file_id": "1uzNsNoK18ynpJXPtAiKnz-UG8fwCry9E",
+    "url": "https://drive.google.com/file/d/1uzNsNoK18ynpJXPtAiKnz-UG8fwCry9E/view?usp=drivesdk",
+    "sha256": "c19ebb14edcba2774c5de433560190a9bd50816ae47e96367ecab3b1aaea2f1d",
+    "file_count": 95,
+    "validated_locally": true,
+    "validation_command": "npm run validate"
+  },
+  "integrations": {
+    "twilio_sms": {
+      "status": "wired_with_env_placeholders",
+      "lead_owner_alerts": true,
+      "customer_confirmation_requires_opt_in": true,
+      "required_env": [
+        "TWILIO_ACCOUNT_SID",
+        "TWILIO_AUTH_TOKEN",
+        "TWILIO_MESSAGING_SERVICE_SID or TWILIO_FROM_PHONE_NUMBER",
+        "TWILIO_OWNER_NOTIFY_TO"
+      ]
+    }
+  },
+  "readiness_checklist": {
+    "title": "Phoenix Epoxy Pros - Pre-Generation Readiness Checklist",
+    "spreadsheet_id": "1WbzhWAbXYBXXBlqn7GsgKcfkPvl0gHcbwSt3VyOHiK4",
+    "url": "https://docs.google.com/spreadsheets/d/1WbzhWAbXYBXXBlqn7GsgKcfkPvl0gHcbwSt3VyOHiK4"
+  },
+  "production_artifacts": {
+    "production_integration_matrix": "https://docs.google.com/spreadsheets/d/1OlhBL3fZQ_6UBoj5ybnxvxF-RjFQG7ReShCMojZ20ww",
+    "pricing_ai_estimating_workbook": "https://docs.google.com/spreadsheets/d/1FVqeSbU-xeHznz-zMWv3vnj48D5r3oP2bBYFZiibfu8",
+    "supabase_data_dictionary": "https://docs.google.com/spreadsheets/d/1Tijw6ey7A1eM9QTEODNU80PjChzOua9-psHFueLNpBM",
+    "location_master_registry": "https://docs.google.com/spreadsheets/d/1fkT28Mv8iArZZYN3TDiyEm3gkLLRysGxitpmItgfE4w",
+    "metricool_operating_inputs": "https://docs.google.com/spreadsheets/d/1B03cw3VPrNK4fPSMXuR2jXQm54DA3QL4TJ66T8vFJiQ",
+    "legal_approval_template_pack": "https://docs.google.com/document/d/1ermccPi0TB-BPZcEDBqmTFmdFmFPmxHNnG6pP2SJoX4",
+    "automation_receipt_archive": "https://drive.google.com/drive/folders/1Up7KoErt8neJIGq9Ooxv9xscJWaY_0AY"
+  },
+  "source_reference_repo": "Strategic-Minds/NASHVILLERESINWORX",
+  "target_repo": "Strategic-Minds/xtreme-epoxy",
+  "apps": {
+    "website": "apps/phoenix-epoxy-pros-site",
+    "customer_job_app": "apps/phoenix-job-ops-app"
+  },
+  "owner_defaults": {
+    "phone": "772-209-0266",
+    "email": "hello@phoenixepoxypros.com",
+    "logo": "placeholder",
+    "images": "placeholder"
+  },
+  "secret_policy": "No live secrets are stored in Drive or Git. Use provider vaults and Vercel/Auto Builder environment stores."
+}

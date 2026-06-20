@@ -1,0 +1,75 @@
+name: Factory Readiness Receipt
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check-readiness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Read readiness receipt
+        id: receipt
+        run: |
+          set -euo pipefail
+          url="${{ secrets.READINESS_ENDPOINT_URL }}"
+          if [ -z "$url" ]; then
+            echo "missing readiness endpoint url"
+            exit 1
+          fi
+
+          secret="${{ secrets.CRON_SECRET }}"
+          if [ -n "$secret" ]; then
+            url="${url}?secret=${secret}"
+          fi
+
+          response="$(curl -fsS "$url")"
+          echo "$response" > readiness.json
+          echo "payload<<EOF" >> "$GITHUB_OUTPUT"
+          cat readiness.json >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+
+      - name: Open issue on failure
+        if: ${{ fromJson(steps.receipt.outputs.payload).ok == false }}
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const payload = JSON.parse(process.env.READINESS_PAYLOAD);
+            const title = `Factory readiness drift: ${new Date(payload.timestamp).toISOString()}`;
+            const body = [
+              '## Factory readiness receipt',
+              '',
+              `- Timestamp: ${payload.timestamp}`,
+              `- Mode: ${payload.mode}`,
+              `- Receipt: ${payload.receipt}`,
+              '',
+              '### Failing items',
+              ...(payload.failures || []).map((item) => `- \`${item.path}\` ${item.status ? `(status ${item.status})` : ''} ${item.note ? `- ${item.note}` : ''}`),
+              '',
+              '### Next actions',
+              ...(payload.nextActions || []).map((item) => `- ${item}`),
+              '',
+              '### Patch guidance',
+              '- Repair the specific route or asset drift.',
+              '- Re-run production validation after the change.',
+              '- Close the issue only after the receipt returns ok.'
+            ].join('\n');
+
+            const { data } = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              body,
+              labels: ['factory-readiness', 'auto-patch']
+            });
+
+            core.info(`Created issue #${data.number}`);
+        env:
+          READINESS_PAYLOAD: ${{ steps.receipt.outputs.payload }}

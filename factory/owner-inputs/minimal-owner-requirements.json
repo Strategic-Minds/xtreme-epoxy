@@ -1,0 +1,40 @@
+{
+  "schema_version": "2026-06-16",
+  "goal": "Keep owner input minimal by generating with placeholders where safe.",
+  "provided_now": {
+    "phone": "772-209-0266",
+    "email": "hello@phoenixepoxypros.com",
+    "business_name": "Phoenix Epoxy Pros",
+    "logo": "placeholder",
+    "images": "placeholder"
+  },
+  "required_before_owner_review": [
+    {
+      "item": "Permission to generate with placeholders",
+      "why": "Needed before sending the first owner-review preview.",
+      "can_generate_without_it": true
+    }
+  ],
+  "required_before_production_launch": [
+    {
+      "item": "Final domain and DNS access",
+      "placeholder": "phoenixepoxypros.com"
+    },
+    {
+      "item": "Final logo and approved image library",
+      "placeholder": "local placeholder SVG assets"
+    },
+    {
+      "item": "Warranty, coupon, estimate, privacy, SMS consent, and change-order approval",
+      "placeholder": "factory boilerplate"
+    },
+    {
+      "item": "Pricing matrix and travel-radius policy",
+      "placeholder": "template estimating assumptions"
+    },
+    {
+      "item": "Payment, calendar, CRM, email, and SMS credentials",
+      "placeholder": "stub integration mode"
+    }
+  ]
+}

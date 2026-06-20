@@ -1,0 +1,22 @@
+{
+  "schema_version": "2026-06-16",
+  "project": "Phoenix Epoxy Pros",
+  "production_ready_scaffold": {
+    "title": "xtreme-epoxy-phoenix-production-ready-scaffold-final-v2.zip",
+    "drive_file_id": "1uzNsNoK18ynpJXPtAiKnz-UG8fwCry9E",
+    "url": "https://drive.google.com/file/d/1uzNsNoK18ynpJXPtAiKnz-UG8fwCry9E/view?usp=drivesdk",
+    "sha256": "2f174d4c23de84448f4ee2ef246a9af8f55bdc777a005ac1c6c41b730e31f0e9",
+    "file_count": 94,
+    "validation": "npm run validate passed"
+  },
+  "drive_artifacts": {
+    "production_integration_matrix": "https://docs.google.com/spreadsheets/d/1OlhBL3fZQ_6UBoj5ybnxvxF-RjFQG7ReShCMojZ20ww",
+    "pricing_ai_estimating_workbook": "https://docs.google.com/spreadsheets/d/1FVqeSbU-xeHznz-zMWv3vnj48D5r3oP2bBYFZiibfu8",
+    "supabase_data_dictionary": "https://docs.google.com/spreadsheets/d/1Tijw6ey7A1eM9QTEODNU80PjChzOua9-psHFueLNpBM",
+    "location_master_registry": "https://docs.google.com/spreadsheets/d/1fkT28Mv8iArZZYN3TDiyEm3gkLLRysGxitpmItgfE4w",
+    "metricool_operating_inputs": "https://docs.google.com/spreadsheets/d/1B03cw3VPrNK4fPSMXuR2jXQm54DA3QL4TJ66T8vFJiQ",
+    "legal_approval_template_pack": "https://docs.google.com/document/d/1ermccPi0TB-BPZcEDBqmTFmdFmFPmxHNnG6pP2SJoX4",
+    "automation_receipt_archive": "https://drive.google.com/drive/folders/1Up7KoErt8neJIGq9Ooxv9xscJWaY_0AY"
+  },
+  "secret_policy": "No live secrets are stored in Drive or Git. Use Vercel, Supabase, payment provider, and Auto Builder vaults."
+}
