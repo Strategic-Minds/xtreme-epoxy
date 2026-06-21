@@ -1,4 +1,4 @@
-# xtreme-epoxy
+# PHO0NIX-EPOXY-PROS
 
 Autonomous website factory starter for Xtreme Polishing Systems connected local market sites.
 
@@ -8,10 +8,11 @@ The first location is Phoenix Epoxy Pros. The scaffold is based on the Nashville
 
 - Business name: Phoenix Epoxy Pros
 - Phone: 772-209-0266
-- Email: hello@phoenixepoxypros.com
-- Logo: placeholder
-- Images: placeholder
-- Reference repo: https://github.com/Strategic-Minds/NASHVILLERESINWORX
+- Email: info@epoxywillchangeyourlife.com
+- System sync email- strategicmindsadvisory@gmail.com
+- Logo: placeholder- need to create a branch pack
+- Images: https://drive.google.com/drive/folders/1SFRjoMbAVdank3Xl2OCTk5Qk2UnuGaIu?usp=drive_link
+- Reference repo: 
 - Phoenix Drive packet: https://drive.google.com/drive/folders/1wdvro-T90CqXjcLtyACFXnlJ9vOqxuTk
 - Readiness checklist: https://docs.google.com/spreadsheets/d/1WbzhWAbXYBXXBlqn7GsgKcfkPvl0gHcbwSt3VyOHiK4
 - Production-ready scaffold package: https://drive.google.com/file/d/1uzNsNoK18ynpJXPtAiKnz-UG8fwCry9E/view?usp=drivesdk
