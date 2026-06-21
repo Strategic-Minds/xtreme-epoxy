@@ -11,7 +11,7 @@ The first location is Phoenix Epoxy Pros. The scaffold is based on the Nashville
 - Email: info@epoxywillchangeyourlife.com
 - System sync email- strategicmindsadvisory@gmail.com
 - Logo: placeholder- need to create a branch pack
-- Images: https://drive.google.com/drive/folders/1SFRjoMbAVdank3Xl2OCTk5Qk2UnuGaIu?usp=drive_link
+- Images: https://drive.google.com/drive/folders/1zClFghVXNmY-QeU9NhzMTWvfD9VMV1HW?usp=drive_link
 - Reference repo: 
 - Phoenix Drive packet: https://drive.google.com/drive/folders/1wdvro-T90CqXjcLtyACFXnlJ9vOqxuTk
 - Readiness checklist: https://docs.google.com/spreadsheets/d/1WbzhWAbXYBXXBlqn7GsgKcfkPvl0gHcbwSt3VyOHiK4
