@@ -12,7 +12,7 @@ The first location is Phoenix Epoxy Pros. The scaffold is based on the Nashville
 - System sync email- strategicmindsadvisory@gmail.com
 - Logo: placeholder- need to create a branch pack
 - Images: https://drive.google.com/drive/folders/1zClFghVXNmY-QeU9NhzMTWvfD9VMV1HW?usp=drive_link
-- Reference repo: 
+- Reference repo: https://drive.google.com/drive/folders/1SFRjoMbAVdank3Xl2OCTk5Qk2UnuGaIu?usp=drive_link
 - Phoenix Drive packet: https://drive.google.com/drive/folders/1wdvro-T90CqXjcLtyACFXnlJ9vOqxuTk
 - Readiness checklist: https://docs.google.com/spreadsheets/d/1WbzhWAbXYBXXBlqn7GsgKcfkPvl0gHcbwSt3VyOHiK4
 - Production-ready scaffold package: https://drive.google.com/file/d/1uzNsNoK18ynpJXPtAiKnz-UG8fwCry9E/view?usp=drivesdk
