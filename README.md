@@ -2,7 +2,7 @@
 
 Autonomous website factory starter for Xtreme Polishing Systems connected local market sites.
 
-The first location is Phoenix Epoxy Pros. The scaffold is based on the Nashville Resin Worx reference pattern and now includes the production-readiness layer for integrations, pricing, Supabase, legal templates, receipt tracking, location registry, Metricool operations, Twilio SMS lead alerts, and QA.
+The first location is Phoenix Epoxy Pros. The scaffold is based on xps website reference pattern and now includes the production-readiness layer for integrations, pricing, Supabase, legal templates, receipt tracking, location registry, Metricool operations, Twilio SMS lead alerts, and QA.
 
 ## Current Default Inputs
 
@@ -59,7 +59,7 @@ Do not store live Twilio credentials in Drive or Git.
 
 Use this repo as the control repo and ingest the production-ready scaffold package after switching Auto Builder to:
 
-- repository: `Strategic-Minds/xtreme-epoxy`
+- repository: `Strategic-Minds/phonix-epoxy-pros`
 - first location: `phoenix-epoxy-pros`
 - website app path: `apps/phoenix-epoxy-pros-site`
 - customer app path: `apps/phoenix-job-ops-app`
