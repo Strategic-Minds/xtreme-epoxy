@@ -1,0 +1,14 @@
+.next
+playwright-report
+test-results
+coverage
+node_modules
+.env
+.env.local
+.env.development
+.env.development.local
+.env.production
+.env.production.local
+*.log
+*.tsbuildinfo
+

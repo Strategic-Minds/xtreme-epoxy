@@ -54,7 +54,7 @@ const workflowSteps = [
     number: "02",
     title: "Estimator Review",
     status: "In Review",
-    text: "Jeremy reviews the photos, measurements, existing floor covering, concrete condition, desired finish, selected color, and urgency notes."
+    text: "The project review team reviews the photos, measurements, existing floor covering, concrete condition, desired finish, selected color, and urgency notes."
   },
   {
     key: "proposal",
@@ -185,7 +185,7 @@ export default function ClientDashboardPage() {
   const attachmentCount = lead.attachmentCount ?? attachments.length;
   const activeWorkflow = workflowSteps.find((step) => step.key === activeStep) || workflowSteps[1];
   const deliveryLabel = lead.notificationSent === "yes"
-    ? "Email sent to Jeremy"
+    ? "Email sent to project review inbox"
     : lead.storedInSupabase === "yes"
       ? "Saved for review"
       : "Delivery needs connection check";
@@ -284,7 +284,7 @@ export default function ClientDashboardPage() {
         <article className="client-dashboard-metric-card">
           <span className="section-kicker">Delivery</span>
           <strong>{deliveryLabel}</strong>
-          <p>Estimate review is routed to {lead.estimateRecipient || "jeremy@shopxps.com"} when email is configured.</p>
+          <p>Estimate review is routed to {lead.estimateRecipient || "hello@phoenixepoxypros.com"} when email is configured.</p>
         </article>
       </section>
 

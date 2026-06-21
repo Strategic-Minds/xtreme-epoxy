@@ -13,9 +13,9 @@ Keep the existing Phoenix Epoxy Pros/XPS branding intact while turning the websi
 
 1. A visitor starts a Digital Bid from the hero, the customer portal entry, or the 15% Digital Estimator section.
 2. The Digital Bid System collects the full project package: contact details, address, measurements, existing covering, concrete condition, finish, color, urgency, notes, and multiple images.
-3. The submission is queued in Supabase and, once mail credentials are configured, emailed to `jeremy@shopxps.com` for human review.
+3. The submission is queued in Supabase and, once mail credentials are configured, emailed to the project review inbox for human review.
 4. The customer lands on a client dashboard showing their selected finish, selected color, coupon, ASAP status, image count, delivery status, and next workflow step.
-5. Jeremy sends the proposal, warranty information, and payment link by email.
+5. The project review team sends the proposal, warranty information, and payment link by email.
 6. After payment, the customer receives temporary job tracker access.
 7. The long-term portal target is email-first access, preferably Supabase magic link/OTP, so customers do not need to remember a username and password.
 
@@ -29,7 +29,7 @@ Keep the existing Phoenix Epoxy Pros/XPS branding intact while turning the websi
 - `/digital-estimator` professional intake page with white fields, required project details, multiple image uploads, finish/color logic, ASAP request, and proposal workflow copy.
 - `/client-dashboard` interactive client dashboard with selected finish/color, coupon, upload summary, delivery status, workflow tracker, action checklist, and instant chat access.
 - `/job-tracker` temporary tracker preview for the post-proposal/payment/access workflow.
-- `/api/leads` route that now succeeds only when either Supabase queueing or email notification succeeds.
+- `/api/leads` route that now succeeds even in degraded mode while still preferring Supabase queueing, email delivery, and SMS alerts when credentials are present.
 
 ### Validated On June 19, 2026
 
@@ -100,8 +100,8 @@ The MVP remains human-reviewed:
 - The website receives the submission.
 - Attachments are stored in Supabase Storage when valid PNG/JPG/WEBP images are uploaded.
 - A lead row is inserted into `public.leads`.
-- Email notification is sent to `jeremy@shopxps.com` when Resend is configured.
-- Jeremy reviews the package and sends the proposal by email.
+- Email notification is sent to the project review inbox when Resend is configured.
+- The project review team reviews the package and sends the proposal by email.
 - The customer receives warranty information and a payment link after proposal approval.
 - After payment, the customer receives temporary job tracker access.
 
@@ -146,9 +146,9 @@ Required Vercel runtime variables:
 
 - `RESEND_API_KEY`
 - `LEADS_FROM_EMAIL` or `RESEND_FROM_EMAIL`
-- `XPS_ESTIMATE_RECIPIENT`, defaulting to `jeremy@shopxps.com`
+- `XPS_ESTIMATE_RECIPIENT`, defaulting to the project review inbox
 
-The Vercel connector available in this run exposes project/log inspection but not environment-variable listing or editing. The app code is ready for Resend, but final email delivery cannot be certified until the Resend key and allowed sender are configured in Vercel and a real POST test confirms delivery to `jeremy@shopxps.com`.
+The Vercel connector available in this run exposes project/log inspection but not environment-variable listing or editing. The app code is ready for Resend, but final email delivery cannot be certified until the Resend key and allowed sender are configured in Vercel and a real POST test confirms delivery to the project review inbox.
 
 ## Auth Plan
 
@@ -199,7 +199,7 @@ Still gated before final production claim:
 
 - Configure and verify Resend delivery in Vercel.
 - Run a real browser POST with a small PNG/JPG/WEBP attachment after a Browser/Playwright worker or equivalent test path is available.
-- Confirm notification reaches `jeremy@shopxps.com`.
+- Confirm notification reaches the project review inbox.
 - Merge/promote the validated branch to production.
 - Repair Supabase Auth before replacing the temporary portal with email-link tracker access.
 
@@ -213,7 +213,7 @@ Before production promotion:
 - `/customer-portal` temporary intake routes to Digital Bid.
 - `/digital-estimator` accepts required fields and multiple image uploads.
 - `/api/leads` queues into Supabase without anonymous lead SELECT.
-- Resend email reaches `jeremy@shopxps.com`.
+- Resend email reaches the project review inbox.
 - `/client-dashboard` shows the submitted package, finish, color, measurements, condition, upload summary, ASAP status, coupon, and workflow steps.
 - Instant chat opens from the dashboard and carries project context.
 - `/job-tracker` communicates the complete post-estimate workflow.
@@ -224,6 +224,6 @@ Before production promotion:
 
 1. Add/verify `RESEND_API_KEY` and sender variables in Vercel.
 2. Run a real Digital Bid POST test with one small image.
-3. Confirm the lead row appears in `public.leads` and the notification arrives at `jeremy@shopxps.com`.
+3. Confirm the lead row appears in `public.leads` and the notification arrives at the project review inbox.
 4. Promote or merge the branch after email validation.
 5. Repair Supabase Auth and replace temporary customer entry with email magic-link tracker access.

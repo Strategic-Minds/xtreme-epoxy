@@ -40,10 +40,11 @@ Block production launch on those same items.
 6. Generate a Vercel sandbox preview for `apps/phoenix-epoxy-pros-site`.
 7. Generate a separate Vercel sandbox preview for `apps/phoenix-job-ops-app`.
 8. Run the root validation script.
-9. Run app PWA validation.
-10. Run responsive and upload-flow checks.
-11. Save receipts to the Phoenix Drive QA/approval folder.
-12. Send owner review links and checklist status.
+9. Run browser validation with Playwright against the built app.
+10. Run app PWA validation.
+11. Run responsive and upload-flow checks.
+12. Save receipts to the Phoenix Drive QA/approval folder.
+13. Send owner review links and checklist status.
 
 ## 5-Minute Cron
 

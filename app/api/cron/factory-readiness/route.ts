@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { getRuntimeEnvReport, summarizeEnvReport } from "../../../../lib/runtime-env";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -34,6 +35,7 @@ export async function GET(request: Request) {
   }
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://127.0.0.1:3000";
+  const envReport = getRuntimeEnvReport();
   const checks = [] as Array<{ path: string; ok: boolean; status?: number; note?: string }>;
 
   for (const path of approvedPages) {
@@ -54,7 +56,12 @@ export async function GET(request: Request) {
     }
   }));
 
-  const failures = [...checks.filter((item) => !item.ok), ...assetChecks.filter((item) => !item.ok)];
+  const envFailures = envReport.productionBlockers.map((name) => ({
+    path: `env:${name}`,
+    ok: false,
+    note: "Production blocker missing from runtime environment."
+  }));
+  const failures = [...checks.filter((item) => !item.ok), ...assetChecks.filter((item) => !item.ok), ...envFailures];
   const nextActions = failures.length === 0
     ? [
         "Keep the current build locked.",
@@ -70,6 +77,7 @@ export async function GET(request: Request) {
     ok: failures.length === 0,
     timestamp: new Date().toISOString(),
     mode: isTruthy(process.env.FACTORY_TEMPLATE_MODE) ? "template" : "production",
+    envReport: summarizeEnvReport(envReport),
     pagesChecked: checks,
     assetsChecked: assetChecks,
     failures,

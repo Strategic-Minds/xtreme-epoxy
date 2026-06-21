@@ -49,6 +49,7 @@ jobs:
               `- Timestamp: ${payload.timestamp}`,
               `- Mode: ${payload.mode}`,
               `- Receipt: ${payload.receipt}`,
+              payload.envReport ? `- Env blockers: ${(payload.envReport.productionBlockers || []).join(', ') || 'none'}` : '- Env blockers: unknown',
               '',
               '### Failing items',
               ...(payload.failures || []).map((item) => `- \`${item.path}\` ${item.status ? `(status ${item.status})` : ''} ${item.note ? `- ${item.note}` : ''}`),

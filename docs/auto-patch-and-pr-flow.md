@@ -5,6 +5,7 @@ This workflow converts a failing readiness receipt into a durable repo handoff.
 ## Trigger Sources
 
 - Vercel cron readiness failures
+- Browser validation failures from Playwright / production readiness CI
 - Manual GitHub Actions dispatch
 - Local validation failures during repo work
 

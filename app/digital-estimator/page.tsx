@@ -136,8 +136,8 @@ export default function DigitalEstimatorPage() {
     formData.set("asapServiceRequested", asapServiceRequested);
     formData.set("desiredFinish", desiredFinish);
     formData.set("desiredColor", desiredColor);
-    formData.set("notificationEmail", "jeremy@shopxps.com");
-    formData.set("proposalWorkflow", "Email estimate to Jeremy, send proposal to customer, send payment link, then send temporary job tracker sign-in after payment.");
+    formData.set("notificationEmail", "hello@phoenixepoxypros.com");
+    formData.set("proposalWorkflow", "Project review team reviews the package, sends the proposal and warranty details by email, sends payment link after approval, then sends temporary job tracker access after payment.");
 
     try {
       const response = await fetch("/api/leads", {
@@ -174,11 +174,11 @@ export default function DigitalEstimatorPage() {
         leadId: result.persistence?.leadId || result.leadPackage?.leadId || "",
         storedInSupabase: result.persistence?.stored ? "yes" : "no",
         notificationSent: result.notification?.sent ? "yes" : "no",
-        estimateRecipient: result.notification?.to || "jeremy@shopxps.com",
+        estimateRecipient: result.notification?.to || "hello@phoenixepoxypros.com",
         deliveryMode: result.notification?.sent ? "email_sent" : "supabase_queue",
         coupon: "15% Digital Estimator coupon",
         estimateGuarantee: "Guaranteed estimate within 24 hours by email with warranty information and job tracker next steps.",
-        proposalWorkflow: "Jeremy reviews the package, sends proposal and warranty details by email, sends payment link after approval, then sends temporary job tracker access after payment."
+        proposalWorkflow: "Project review team reviews the package, sends proposal and warranty details by email, sends payment link after approval, then sends temporary job tracker access after payment."
       };
 
       window.sessionStorage.setItem("xpsClientDashboard", JSON.stringify(dashboardLead));
@@ -358,7 +358,7 @@ export default function DigitalEstimatorPage() {
 
           <div className="digital-estimator-flow-note digital-estimator-wide">
             <strong>What happens next</strong>
-            <span>Jeremy receives the estimator package, your proposal is sent by email, then the payment link and temporary job tracker sign-in follow after approval and payment. After you submit, this page opens your client dashboard.</span>
+            <span>The project review team receives the estimator package, your proposal is sent by email, then the payment link and temporary job tracker sign-in follow after approval and payment. After you submit, this page opens your client dashboard.</span>
           </div>
 
           <button className="gold-button digital-estimator-submit" type="submit" disabled={submitState === "sending"}>
