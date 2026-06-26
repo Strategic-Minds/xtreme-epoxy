@@ -31,5 +31,22 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/get-quote",
+      "destination": "/estimate",
+      "permanent": false
+    },
+    {
+      "source": "/estimate",
+      "destination": "/#get-estimate",
+      "permanent": false
+    },
+    {
+      "source": "/quote",
+      "destination": "/#get-estimate",
+      "permanent": false
+    }
   ]
 }
